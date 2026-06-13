@@ -15,13 +15,25 @@ streamlit>=1.35.0
 langchain>=0.2.0
 langchain-community>=0.2.0
 langchain-groq>=0.1.5
+langchain-huggingface>=0.0.3
+langchain-text-splitters>=0.2.0
 
-# ── Vector store ─────────────────────────────────────────────────
-chromadb>=0.5.0
+# ── OPTIONAL: Offline mode (local LLM via Ollama) ─────────────────
+# Only needed for LOCAL use of the "Offline" mode in the app.
+# Ollama requires a local machine and CANNOT run on Streamlit Cloud,
+# so this is commented out for cloud deployment. Uncomment for local use:
+# langchain-ollama>=0.1.0
+
+# ── Vector store (local, file-based — no server needed) ──────────
+faiss-cpu>=1.8.0
 
 # ── Local embeddings (HuggingFace sentence-transformers) ─────────
+# IMPORTANT: Use CPU-only torch (much smaller ~200MB vs ~2GB+ for full
+# GPU version). Streamlit Cloud's free tier has limited build space/time,
+# and the full torch package causes install failures/timeouts there.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.0.0
 sentence-transformers>=2.7.0
-torch>=2.0.0            # CPU-only is fine for embeddings
 
 # ── Document parsers ─────────────────────────────────────────────
 PyMuPDF>=1.24.0         # PDF parsing  (package name: fitz)
