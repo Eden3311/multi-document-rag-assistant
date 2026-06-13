@@ -4,7 +4,7 @@
 > multiple documents (PDF, DOCX, TXT) and get AI-powered, source-cited
 > answers — built entirely with free and open-source tools.
 
-🔗 **Live Demo**: [Add your Streamlit Cloud link here]
+🔗 **Live Demo**: [https://multi-document-rag-assistant-8u9zjmqy46sb7tbhgaac7r.streamlit.app]
 
 ---
 
