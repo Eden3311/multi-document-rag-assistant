@@ -1,0 +1,26 @@
+# ── Secrets ──────────────────────────────────────────────────────
+.env
+
+# ── FAISS vector store (large, regenerated from docs) ─────────
+FAISS_db/
+
+# ── Python cache ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ── Virtual environments ──────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── HuggingFace model cache (large — downloaded automatically) ───
+.cache/
+
+# ── OS junk ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Streamlit ─────────────────────────────────────────────────────
+.streamlit/secrets.toml
