@@ -3,14 +3,7 @@ rag_pipeline.py
 ---------------
 Core RAG pipeline using FAISS vector store + Groq LLM.
 
-PERMANENT FIX for "Cannot send a request, as the client has been closed":
-The HuggingFace embedding model is now loaded ONCE and cached as a
-module-level singleton (via functools.lru_cache). Previously it was
-recreated on every single Streamlit rerun, which spawned a new internal
-HTTP client each time. After enough reruns, a stale/closed client was
-reused internally and crashed with this exact error.
-
-We also force HuggingFace Hub into OFFLINE mode after the model is cached
+It also force HuggingFace Hub into OFFLINE mode after the model is cached
 locally for the first time — this stops ALL background network/version
 checks, making the app fully usable without internet (except the Groq
 LLM call, which needs internet).
